@@ -22,7 +22,7 @@ client_secret_dict = json.loads(client_secret_json) if client_secret_json else N
 
 from auth.authenticate import Authenticator
 
-REDIRECT_URI = "https://app-test-ngonccnz6xxt2cfap2qptn.streamlit.app/"
+REDIRECT_URI = "https://app-test-ngonccnz6xxt2cfap2qptn.streamlit.app"
 
 st.title("Initiate Qualification Call")
 
