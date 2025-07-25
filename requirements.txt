@@ -1,0 +1,8 @@
+streamlit
+streamlit-authenticator
+requests 
+google-auth-oauthlib
+google-api-python-client
+python-dotenv
+extra-streamlit-components
+pyjwt 
