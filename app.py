@@ -8,7 +8,7 @@ if "ALLOWED_USERS" in st.secrets:
     allowed_users = st.secrets["ALLOWED_USERS"].split(",")
     token_key = st.secrets["TOKEN_KEY"]
     api_key = st.secrets["API_KEY"]
-    client_secret_json = st.secrets["CLIENT_SECRET_JSON"]
+    client_secret_dict = {"web": dict(st.secrets["CLIENT_SECRET_WEB"])}
 else:
     import os
     from dotenv import load_dotenv
@@ -17,8 +17,7 @@ else:
     token_key = os.getenv("TOKEN_KEY", "changeme")
     api_key = os.getenv("API_KEY", "")
     client_secret_json = os.getenv("CLIENT_SECRET_JSON", None)
-
-client_secret_dict = json.loads(client_secret_json) if client_secret_json else None
+    client_secret_dict = json.loads(client_secret_json) if client_secret_json else None
 
 from auth.authenticate import Authenticator
 
