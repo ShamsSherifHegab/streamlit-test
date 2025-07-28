@@ -57,7 +57,8 @@ if st.session_state.get("connected"):
                 "propertyLocation": "Downtown dubai",
                 "numberOfBedrooms": "3",
                 "agentName": "Nathan",
-                "status": "Pool"
+                "status": "Pool",
+                "inquiryDate":"20/05/2025"
             }
         }
         try:
