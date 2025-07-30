@@ -41,7 +41,7 @@ if st.session_state.get("connected"):
     phone_number = st.text_input("Enter phone number:")
     if st.button("Send POST Request"):
         generated_id = str(uuid.uuid4())
-        url = "https://ai-control-service.dev.huspy.net/v1/leads/qualifications/rebu/initiate-call"
+        url = "https://ai-control-service.staging.huspy.net/v1/leads/qualifications/rebu/initiate-call"
         headers = {
             "X-Service": "salesforce",
             "Content-Type": "application/json",
