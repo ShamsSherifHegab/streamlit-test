@@ -2,6 +2,7 @@ import streamlit as st
 import json
 import requests
 import uuid
+import datetime
 
 # Try to load secrets from st.secrets (Streamlit Cloud), else fallback to os.environ (local dev)
 if "ALLOWED_USERS" in st.secrets:
@@ -42,7 +43,7 @@ if st.session_state.get("connected"):
     property_price = st.text_input("Enter inquiry property price:",value="3000000")
     property_location = st.text_input("Enter inquiry property location:",value="Downtown dubai")
     number_of_bedrooms = st.text_input("Enter inquiry number of bedrooms:",value="3")
-    inquiry_date = st.date_input("Enter inquiry date:",value="20/05/2025")
+    inquiry_date = st.date_input("Enter inquiry date:",value=datetime.date(year=2025,month=5,day=20))
     if st.button("Send POST Request"):
         generated_id = str(uuid.uuid4())
         url = "https://ai-control-service.staging.huspy.net/v1/leads/qualifications/rebu/initiate-call"
