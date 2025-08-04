@@ -39,6 +39,10 @@ if st.session_state.get("connected"):
     st.write(f"Welcome! {st.session_state['user_info'].get('email')}")
     st.markdown("**Example phone number:** `+971502337602`")
     phone_number = st.text_input("Enter phone number:")
+    property_price = st.text_input("Enter inquiry property price:",value="3000000")
+    property_location = st.text_input("Enter inquiry property location:",value="Downtown dubai")
+    number_of_bedrooms = st.text_input("Enter inquiry number of bedrooms:",value="3")
+    inquiry_date = st.date_input("Enter inquiry date:",value="20/05/2025")
     if st.button("Send POST Request"):
         generated_id = str(uuid.uuid4())
         url = "https://ai-control-service.staging.huspy.net/v1/leads/qualifications/rebu/initiate-call"
@@ -53,12 +57,12 @@ if st.session_state.get("connected"):
             "businessIdentifier": "AE_HUSPY",
             "language": "en",
             "snapshot": {
-                "propertyPrice": "3000000",
-                "propertyLocation": "Downtown dubai",
-                "numberOfBedrooms": "3",
+                "propertyPrice": property_price,
+                "propertyLocation": property_location,
+                "numberOfBedrooms": number_of_bedrooms,
                 "agentName": "Nathan",
                 "status": "Pool",
-                "inquiryDate":"20/05/2025"
+                "inquiryDate":inquiry_date.strftime("%Y-%m-%d")
             }
         }
         try:
