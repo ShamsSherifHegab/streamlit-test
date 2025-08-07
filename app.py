@@ -46,7 +46,7 @@ if st.session_state.get("connected"):
     inquiry_date = st.date_input("Enter inquiry date:",value=datetime.date(year=2025,month=5,day=20))
     if st.button("Send Call Request"):
         generated_id = str(uuid.uuid4())
-        url = "https://ai-control-service.dev.huspy.net/v1/leads/qualifications/rebu/initiate-call"
+        url = "https://ai-control-service.staging.huspy.net/v1/leads/qualifications/rebu/initiate-call"
         headers = {
             "X-Service": "salesforce",
             "Content-Type": "application/json",
